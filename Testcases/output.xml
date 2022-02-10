@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220209 22:54:54.612" rpa="false" schemaversion="2">
+<suite id="s1" name="04 Ref Number Calculator" source="/home/Anh/PycharmProjects/Robot_Project/Testcases/04_Ref_Number_Calculator.robot">
+<test id="s1-t1" name="Verify invalid reference number base - no input">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:54:55.429" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:54:55.428" endtime="20220209 22:54:58.293"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:03.295" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:54:58.294" endtime="20220209 22:55:03.296"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>\</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:03.297" level="INFO">Typing text '' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:55:03.296" endtime="20220209 22:55:03.447"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:55:03.448" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:55:03.447" endtime="20220209 22:55:03.571"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:03.574" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<status status="PASS" starttime="20220209 22:55:03.573" endtime="20220209 22:55:03.717"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:05.719" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:03.718" endtime="20220209 22:55:05.720"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Pakollinen tieto.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220209 22:55:05.721" level="INFO">Verifying element 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' contains exact text 'Pakollinen tieto.'.</msg>
+<msg timestamp="20220209 22:55:05.901" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220209 22:55:05.906" level="FAIL">Element with locator 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' not found.</msg>
+<status status="FAIL" starttime="20220209 22:55:05.720" endtime="20220209 22:55:05.906"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:05.907" endtime="20220209 22:55:05.907"/>
+</kw>
+<status status="FAIL" starttime="20220209 22:54:55.426" endtime="20220209 22:55:05.908">Element with locator 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' not found.</status>
+</test>
+<test id="s1-t2" name="Verify invalid reference number base - too short starting with 0">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:55:05.912" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:55:05.911" endtime="20220209 22:55:08.822"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:13.824" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:08.823" endtime="20220209 22:55:13.824"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>02</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:13.826" level="INFO">Typing text '02' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:55:13.825" endtime="20220209 22:55:13.987"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:55:13.989" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:55:13.988" endtime="20220209 22:55:14.140"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:14.142" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<msg timestamp="20220209 22:55:15.425" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220209 22:55:15.429" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x55c1942dd113 &lt;unknown&gt;
+#1 0x55c193da56d8 &lt;unknown&gt;
+#2 0x55c193de2dcc &lt;unknown&gt;
+#3 0x55c193de0976 &lt;unknown&gt;
+#4 0x55c193dde0d0 &lt;unknown&gt;
+#5 0x55c193ddcd7a &lt;unknown&gt;
+#6 0x55c193dd08a9 &lt;unknown&gt;
+#7 0x55c193df9062 &lt;unknown&gt;
+#8 0x55c193dd0173 &lt;unknown&gt;
+#9 0x55c193df916e &lt;unknown&gt;
+#10 0x55c193e0c90b &lt;unknown&gt;
+#11 0x55c193df8f53 &lt;unknown&gt;
+#12 0x55c193dcebda &lt;unknown&gt;
+#13 0x55c193dcfca5 &lt;unknown&gt;
+#14 0x55c19430e8dd &lt;unknown&gt;
+#15 0x55c194327a9b &lt;unknown&gt;
+#16 0x55c1943106b5 &lt;unknown&gt;
+#17 0x55c194328725 &lt;unknown&gt;
+#18 0x55c19430408f &lt;unknown&gt;
+#19 0x55c194345188 &lt;unknown&gt;
+#20 0x55c194345308 &lt;unknown&gt;
+#21 0x55c19435fa6d &lt;unknown&gt;
+#22 0x7fcb5cf24609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20220209 22:55:14.141" endtime="20220209 22:55:15.430"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:15.431" endtime="20220209 22:55:15.431"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Viitenumeron perusosa on liian lyhyt.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:15.432" endtime="20220209 22:55:15.432"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:15.433" endtime="20220209 22:55:15.433"/>
+</kw>
+<status status="FAIL" starttime="20220209 22:55:05.909" endtime="20220209 22:55:15.434">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x55c1942dd113 &lt;unknown&gt;
+#1 0x55c193da56d8 &lt;unknown&gt;
+#2 0x55c193de2dcc &lt;unknown&gt;
+#3 0x55c193de0976 &lt;unknown&gt;
+#4 0x55c193dde0d0 &lt;unknown&gt;
+#5 0x55c193ddcd7a &lt;unknown&gt;
+#6 0x55c193dd08a9 &lt;unknown&gt;
+#7 0x55c193df9062 &lt;unknown&gt;
+#8 0x55c193dd0173 &lt;unknown&gt;
+#9 0x55c193df916e &lt;unknown&gt;
+#10 0x55c193e0c90b &lt;unknown&gt;
+#11 0x55c193df8f53 &lt;unknown&gt;
+#12 0x55c193dcebda &lt;unknown&gt;
+#13 0x55c193dcfca5 &lt;unknown&gt;
+#14 0x55c19430e8dd &lt;unknown&gt;
+#15 0x55c194327a9b &lt;unknown&gt;
+#16 0x55c1943106b5 &lt;unknown&gt;
+#17 0x55c194328725 &lt;unknown&gt;
+#18 0x55c19430408f &lt;unknown&gt;
+#19 0x55c194345188 &lt;unknown&gt;
+#20 0x55c194345308 &lt;unknown&gt;
+#21 0x55c19435fa6d &lt;unknown&gt;
+#22 0x7fcb5cf24609 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-t3" name="Verify invalid reference number base - too short only two digits">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:55:15.439" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:55:15.438" endtime="20220209 22:55:18.742"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:23.744" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:18.743" endtime="20220209 22:55:23.744"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>12</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:23.746" level="INFO">Typing text '12' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:55:23.745" endtime="20220209 22:55:23.954"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:55:23.955" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:55:23.954" endtime="20220209 22:55:24.131"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:24.133" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<status status="PASS" starttime="20220209 22:55:24.132" endtime="20220209 22:55:24.275"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:26.276" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:24.275" endtime="20220209 22:55:26.277"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Viitenumeron perusosa on liian lyhyt.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220209 22:55:26.278" level="INFO">Verifying element 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' contains exact text 'Viitenumeron perusosa on liian lyhyt.'.</msg>
+<status status="PASS" starttime="20220209 22:55:26.277" endtime="20220209 22:55:26.318"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220209 22:55:26.318" endtime="20220209 22:55:26.479"/>
+</kw>
+<status status="PASS" starttime="20220209 22:55:15.437" endtime="20220209 22:55:26.480"/>
+</test>
+<test id="s1-t4" name="Verify invalid reference number base - too short only zeros">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:55:26.484" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:55:26.483" endtime="20220209 22:55:29.474"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:34.475" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:29.474" endtime="20220209 22:55:34.476"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>00</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:34.477" level="INFO">Typing text '00' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:55:34.476" endtime="20220209 22:55:34.774"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:55:34.775" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:55:34.774" endtime="20220209 22:55:34.983"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:34.984" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<status status="PASS" starttime="20220209 22:55:34.983" endtime="20220209 22:55:35.188"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:37.189" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:35.188" endtime="20220209 22:55:37.189"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Viitenumeron perusosa on liian lyhyt.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220209 22:55:37.191" level="INFO">Verifying element 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' contains exact text 'Viitenumeron perusosa on liian lyhyt.'.</msg>
+<status status="PASS" starttime="20220209 22:55:37.190" endtime="20220209 22:55:37.235"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220209 22:55:37.236" endtime="20220209 22:55:37.360"/>
+</kw>
+<status status="PASS" starttime="20220209 22:55:26.481" endtime="20220209 22:55:37.361"/>
+</test>
+<test id="s1-t5" name="Verify invalid reference number base - too long 20-digits">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:55:37.368" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:55:37.367" endtime="20220209 22:55:39.759"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:44.762" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:39.761" endtime="20220209 22:55:44.762"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>12345678912345678912</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:44.765" level="INFO">Typing text '12345678912345678912' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:55:44.763" endtime="20220209 22:55:45.276"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:55:45.277" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:55:45.276" endtime="20220209 22:55:45.643"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:45.645" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<status status="PASS" starttime="20220209 22:55:45.644" endtime="20220209 22:55:46.032"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:48.035" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:46.034" endtime="20220209 22:55:48.035"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Viitenumeron perusosa on liian lyhyt.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220209 22:55:48.036" level="INFO">Verifying element 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' contains exact text 'Viitenumeron perusosa on liian lyhyt.'.</msg>
+<msg timestamp="20220209 22:55:48.295" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220209 22:55:48.297" level="FAIL">Element with locator 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' not found.</msg>
+<status status="FAIL" starttime="20220209 22:55:48.035" endtime="20220209 22:55:48.297"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:48.298" endtime="20220209 22:55:48.298"/>
+</kw>
+<status status="FAIL" starttime="20220209 22:55:37.362" endtime="20220209 22:55:48.299">Element with locator 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' not found.</status>
+</test>
+<test id="s1-t6" name="Verify invalid reference number base - too long 21-digits">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:55:48.303" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:55:48.302" endtime="20220209 22:55:51.646"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:55:56.648" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:55:51.647" endtime="20220209 22:55:56.649"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>123456789123456789123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:56.651" level="INFO">Typing text '123456789123456789123' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:55:56.649" endtime="20220209 22:55:57.097"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:55:57.099" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:55:57.098" endtime="20220209 22:55:57.302"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:55:57.303" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<msg timestamp="20220209 22:55:58.719" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220209 22:55:58.721" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 783). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x5577ed9fd113 &lt;unknown&gt;
+#1 0x5577ed4c56d8 &lt;unknown&gt;
+#2 0x5577ed502dcc &lt;unknown&gt;
+#3 0x5577ed500976 &lt;unknown&gt;
+#4 0x5577ed4fe0d0 &lt;unknown&gt;
+#5 0x5577ed4fcd7a &lt;unknown&gt;
+#6 0x5577ed4f08a9 &lt;unknown&gt;
+#7 0x5577ed519062 &lt;unknown&gt;
+#8 0x5577ed4f0173 &lt;unknown&gt;
+#9 0x5577ed51916e &lt;unknown&gt;
+#10 0x5577ed52c90b &lt;unknown&gt;
+#11 0x5577ed518f53 &lt;unknown&gt;
+#12 0x5577ed4eebda &lt;unknown&gt;
+#13 0x5577ed4efca5 &lt;unknown&gt;
+#14 0x5577eda2e8dd &lt;unknown&gt;
+#15 0x5577eda47a9b &lt;unknown&gt;
+#16 0x5577eda306b5 &lt;unknown&gt;
+#17 0x5577eda48725 &lt;unknown&gt;
+#18 0x5577eda2408f &lt;unknown&gt;
+#19 0x5577eda65188 &lt;unknown&gt;
+#20 0x5577eda65308 &lt;unknown&gt;
+#21 0x5577eda7fa6d &lt;unknown&gt;
+#22 0x7f6a8dc4c609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20220209 22:55:57.303" endtime="20220209 22:55:58.721"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:58.722" endtime="20220209 22:55:58.722"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Viitenumeron perusosa on liian lyhyt.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:58.723" endtime="20220209 22:55:58.723"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220209 22:55:58.730" endtime="20220209 22:55:58.730"/>
+</kw>
+<status status="FAIL" starttime="20220209 22:55:48.301" endtime="20220209 22:55:58.731">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 783). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x5577ed9fd113 &lt;unknown&gt;
+#1 0x5577ed4c56d8 &lt;unknown&gt;
+#2 0x5577ed502dcc &lt;unknown&gt;
+#3 0x5577ed500976 &lt;unknown&gt;
+#4 0x5577ed4fe0d0 &lt;unknown&gt;
+#5 0x5577ed4fcd7a &lt;unknown&gt;
+#6 0x5577ed4f08a9 &lt;unknown&gt;
+#7 0x5577ed519062 &lt;unknown&gt;
+#8 0x5577ed4f0173 &lt;unknown&gt;
+#9 0x5577ed51916e &lt;unknown&gt;
+#10 0x5577ed52c90b &lt;unknown&gt;
+#11 0x5577ed518f53 &lt;unknown&gt;
+#12 0x5577ed4eebda &lt;unknown&gt;
+#13 0x5577ed4efca5 &lt;unknown&gt;
+#14 0x5577eda2e8dd &lt;unknown&gt;
+#15 0x5577eda47a9b &lt;unknown&gt;
+#16 0x5577eda306b5 &lt;unknown&gt;
+#17 0x5577eda48725 &lt;unknown&gt;
+#18 0x5577eda2408f &lt;unknown&gt;
+#19 0x5577eda65188 &lt;unknown&gt;
+#20 0x5577eda65308 &lt;unknown&gt;
+#21 0x5577eda7fa6d &lt;unknown&gt;
+#22 0x7f6a8dc4c609 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-t7" name="Verify invalid reference number base - includes space">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:55:58.735" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:55:58.733" endtime="20220209 22:56:02.106"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:56:07.108" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:56:02.107" endtime="20220209 22:56:07.108"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>236 4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:56:07.110" level="INFO">Typing text '236 4' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:56:07.109" endtime="20220209 22:56:07.275"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:56:07.276" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:56:07.276" endtime="20220209 22:56:07.420"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:56:07.422" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<msg timestamp="20220209 22:56:08.792" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220209 22:56:08.794" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x56051422d113 &lt;unknown&gt;
+#1 0x560513cf56d8 &lt;unknown&gt;
+#2 0x560513d32dcc &lt;unknown&gt;
+#3 0x560513d30976 &lt;unknown&gt;
+#4 0x560513d2e0d0 &lt;unknown&gt;
+#5 0x560513d2cd7a &lt;unknown&gt;
+#6 0x560513d208a9 &lt;unknown&gt;
+#7 0x560513d49062 &lt;unknown&gt;
+#8 0x560513d20173 &lt;unknown&gt;
+#9 0x560513d4916e &lt;unknown&gt;
+#10 0x560513d5c90b &lt;unknown&gt;
+#11 0x560513d48f53 &lt;unknown&gt;
+#12 0x560513d1ebda &lt;unknown&gt;
+#13 0x560513d1fca5 &lt;unknown&gt;
+#14 0x56051425e8dd &lt;unknown&gt;
+#15 0x560514277a9b &lt;unknown&gt;
+#16 0x5605142606b5 &lt;unknown&gt;
+#17 0x560514278725 &lt;unknown&gt;
+#18 0x56051425408f &lt;unknown&gt;
+#19 0x560514295188 &lt;unknown&gt;
+#20 0x560514295308 &lt;unknown&gt;
+#21 0x5605142afa6d &lt;unknown&gt;
+#22 0x7f88b4fb4609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20220209 22:56:07.421" endtime="20220209 22:56:08.794"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220209 22:56:08.795" endtime="20220209 22:56:08.795"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Syötetty arvo ei ole validi numero.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220209 22:56:08.796" endtime="20220209 22:56:08.796"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220209 22:56:08.797" endtime="20220209 22:56:08.797"/>
+</kw>
+<status status="FAIL" starttime="20220209 22:55:58.732" endtime="20220209 22:56:08.798">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x56051422d113 &lt;unknown&gt;
+#1 0x560513cf56d8 &lt;unknown&gt;
+#2 0x560513d32dcc &lt;unknown&gt;
+#3 0x560513d30976 &lt;unknown&gt;
+#4 0x560513d2e0d0 &lt;unknown&gt;
+#5 0x560513d2cd7a &lt;unknown&gt;
+#6 0x560513d208a9 &lt;unknown&gt;
+#7 0x560513d49062 &lt;unknown&gt;
+#8 0x560513d20173 &lt;unknown&gt;
+#9 0x560513d4916e &lt;unknown&gt;
+#10 0x560513d5c90b &lt;unknown&gt;
+#11 0x560513d48f53 &lt;unknown&gt;
+#12 0x560513d1ebda &lt;unknown&gt;
+#13 0x560513d1fca5 &lt;unknown&gt;
+#14 0x56051425e8dd &lt;unknown&gt;
+#15 0x560514277a9b &lt;unknown&gt;
+#16 0x5605142606b5 &lt;unknown&gt;
+#17 0x560514278725 &lt;unknown&gt;
+#18 0x56051425408f &lt;unknown&gt;
+#19 0x560514295188 &lt;unknown&gt;
+#20 0x560514295308 &lt;unknown&gt;
+#21 0x5605142afa6d &lt;unknown&gt;
+#22 0x7f88b4fb4609 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-t8" name="Verify invalid reference number base - include alphabetical characters">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:56:08.803" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:56:08.802" endtime="20220209 22:56:12.469"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:56:17.471" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:56:12.470" endtime="20220209 22:56:17.472"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>abc3</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:56:17.474" level="INFO">Typing text 'abc3' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:56:17.473" endtime="20220209 22:56:17.673"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:56:17.675" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:56:17.674" endtime="20220209 22:56:17.808"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:56:17.810" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<msg timestamp="20220209 22:56:19.194" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220209 22:56:19.196" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x55a31bd5b113 &lt;unknown&gt;
+#1 0x55a31b8236d8 &lt;unknown&gt;
+#2 0x55a31b860dcc &lt;unknown&gt;
+#3 0x55a31b85e976 &lt;unknown&gt;
+#4 0x55a31b85c0d0 &lt;unknown&gt;
+#5 0x55a31b85ad7a &lt;unknown&gt;
+#6 0x55a31b84e8a9 &lt;unknown&gt;
+#7 0x55a31b877062 &lt;unknown&gt;
+#8 0x55a31b84e173 &lt;unknown&gt;
+#9 0x55a31b87716e &lt;unknown&gt;
+#10 0x55a31b88a90b &lt;unknown&gt;
+#11 0x55a31b876f53 &lt;unknown&gt;
+#12 0x55a31b84cbda &lt;unknown&gt;
+#13 0x55a31b84dca5 &lt;unknown&gt;
+#14 0x55a31bd8c8dd &lt;unknown&gt;
+#15 0x55a31bda5a9b &lt;unknown&gt;
+#16 0x55a31bd8e6b5 &lt;unknown&gt;
+#17 0x55a31bda6725 &lt;unknown&gt;
+#18 0x55a31bd8208f &lt;unknown&gt;
+#19 0x55a31bdc3188 &lt;unknown&gt;
+#20 0x55a31bdc3308 &lt;unknown&gt;
+#21 0x55a31bddda6d &lt;unknown&gt;
+#22 0x7fde8430c609 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20220209 22:56:17.809" endtime="20220209 22:56:19.196"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220209 22:56:19.197" endtime="20220209 22:56:19.197"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Syötetty arvo ei ole validi numero.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220209 22:56:19.198" endtime="20220209 22:56:19.198"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220209 22:56:19.199" endtime="20220209 22:56:19.199"/>
+</kw>
+<status status="FAIL" starttime="20220209 22:56:08.800" endtime="20220209 22:56:19.200">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.80)
+Stacktrace:
+#0 0x55a31bd5b113 &lt;unknown&gt;
+#1 0x55a31b8236d8 &lt;unknown&gt;
+#2 0x55a31b860dcc &lt;unknown&gt;
+#3 0x55a31b85e976 &lt;unknown&gt;
+#4 0x55a31b85c0d0 &lt;unknown&gt;
+#5 0x55a31b85ad7a &lt;unknown&gt;
+#6 0x55a31b84e8a9 &lt;unknown&gt;
+#7 0x55a31b877062 &lt;unknown&gt;
+#8 0x55a31b84e173 &lt;unknown&gt;
+#9 0x55a31b87716e &lt;unknown&gt;
+#10 0x55a31b88a90b &lt;unknown&gt;
+#11 0x55a31b876f53 &lt;unknown&gt;
+#12 0x55a31b84cbda &lt;unknown&gt;
+#13 0x55a31b84dca5 &lt;unknown&gt;
+#14 0x55a31bd8c8dd &lt;unknown&gt;
+#15 0x55a31bda5a9b &lt;unknown&gt;
+#16 0x55a31bd8e6b5 &lt;unknown&gt;
+#17 0x55a31bda6725 &lt;unknown&gt;
+#18 0x55a31bd8208f &lt;unknown&gt;
+#19 0x55a31bdc3188 &lt;unknown&gt;
+#20 0x55a31bdc3308 &lt;unknown&gt;
+#21 0x55a31bddda6d &lt;unknown&gt;
+#22 0x7fde8430c609 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-t9" name="Verify invalid reference number base - include special characters">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 22:56:19.206" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
+<status status="PASS" starttime="20220209 22:56:19.205" endtime="20220209 22:56:22.623"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:56:27.625" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220209 22:56:22.624" endtime="20220209 22:56:27.625"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_refNumberBase}</arg>
+<arg>-123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 22:56:27.627" level="INFO">Typing text '-123' into text field 'name:referenceNumberBase'.</msg>
+<status status="PASS" starttime="20220209 22:56:27.626" endtime="20220209 22:56:28.533"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${input_refNumberAmount}</arg>
+<arg>2: TEN</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220209 22:56:28.534" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
+<status status="PASS" starttime="20220209 22:56:28.533" endtime="20220209 22:56:29.444"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_refNumberType}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 22:56:29.445" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
+<status status="PASS" starttime="20220209 22:56:29.444" endtime="20220209 22:56:29.592"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220209 22:56:31.593" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220209 22:56:29.593" endtime="20220209 22:56:31.594"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${error_container}</arg>
+<arg>Syötetty arvo ei ole validi numero.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220209 22:56:31.596" level="INFO">Verifying element 'xpath://*[@id="referenceNumberBase"]/div/div[4]/div' contains exact text 'Syötetty arvo ei ole validi numero.'.</msg>
+<status status="PASS" starttime="20220209 22:56:31.594" endtime="20220209 22:56:31.636"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220209 22:56:31.636" endtime="20220209 22:56:32.770"/>
+</kw>
+<status status="PASS" starttime="20220209 22:56:19.203" endtime="20220209 22:56:32.770"/>
+</test>
+<status status="FAIL" starttime="20220209 22:54:54.615" endtime="20220209 22:56:32.776"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="6" skip="0" id="s1" name="04 Ref Number Calculator">04 Ref Number Calculator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

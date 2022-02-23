@@ -11,6 +11,8 @@ ${input_password}   name:passwd
 ${password}         e,gH0|t_5N6ST7VKEf;W
 ${invalid_password}  e,gH0|t_5N6ST7VKEf;W${SPACE}
 ${signIn}           xpath://*[@id="idSIButton9"]
+${password_error_msg} id:passwordError
+${reset_link}       xpath://*[@id="idA_IL_ForgotPassword0"]
 ${addAUser}         xpath://*[@id="viewport"]/div[4]/div/div/div/div/div/div[1]/div[1]/button
 
 *** Test Cases  ***
@@ -39,7 +41,7 @@ Verify unsuccess login with invalid account name
     Click Button    Yes
     Sleep   2s
     Close Browser
-Verify unsuccess login with invalid password
+Verify unsuccess login with invalid password - first attempt
     Open Browser    ${url}      ${browser}
     Input Text      ${input_account}    ${account}
     Click Button    Next
@@ -48,10 +50,7 @@ Verify unsuccess login with invalid password
     Sleep   2s
     Click Element       ${signIn}
     Sleep   2s
-    Click Button    Yes
-    Sleep   2s
-    Close Browser
-
+    Element Should Contain  ${password_error_msg}   ${reset_link}
 #Verify success add new user 
 #  Input Text      ${input_account}    ${account}
 #    Click Button    Next

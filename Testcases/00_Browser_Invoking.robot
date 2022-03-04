@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary     #importing selenium library
+Library  Selenium2Library     #importing selenium library
 
 
 *** Variables ***

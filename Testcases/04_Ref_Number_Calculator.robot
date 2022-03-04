@@ -1,28 +1,40 @@
 *** Settings ***
-Library     SeleniumLibrary
+Library     Selenium2Library
 
-*** Variables  ***
-${url}   https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri 
-${browser}   chrome
+
+*** Variables ***
+${URL}   https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri 
+${BROWSER}   chrome
+
 ${input_refNumberBase}     name:referenceNumberBase
 ${input_refNumberAmount}   id:ig-select-referenceNumberAmount
 ${input_refNumberType}     xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span
+${button_calc}      xpath:////*[@id="MainContentSection_T17BA5993010_Col00"]/referencenumber-calculator/app-container/div/div/calculator/form-control-group/div[2]/div/button
 ${error_container}   xpath://*[@id="referenceNumberBase"]/div/div[4]/div
+
+*** Keywords ***
+Access application
+    [Arguments]     ${url}  ${browser}
+    Open Browser    ${url}  ${browser}
+Error text should be
+    [Arguments]     ${error_container}  ${error_text}
+    Element Text Should Be  ${error_container}  ${error_text}
 
 
 *** Test Cases ***
 # List out a list of scenarios
 Verify invalid reference number base - no input
-    Open Browser    ${url}  ${browser}
+    [Tags]  input
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     \  
-    Select From List By value   ${input_refNumberAmount}   2: TEN
-    Click Element  ${input_refNumberType}      
     Sleep   2s
+    Click Button    Laske 
     Element Text Should Be   ${error_container}    Pakollinen tieto.
     Close Browser
+
 Verify invalid reference number base - too short starting with 0 
-    Open Browser    ${url}  ${browser}
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     02
     Select From List By value   ${input_refNumberAmount}   2: TEN
@@ -30,8 +42,9 @@ Verify invalid reference number base - too short starting with 0
     Sleep   2s
     Element Text Should Be   ${error_container}    Viitenumeron perusosa on liian lyhyt.
     Close Browser
+
 Verify invalid reference number base - too short only two digits
-    Open Browser    ${url}  ${browser}
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     12
     Select From List By value   ${input_refNumberAmount}   2: TEN
@@ -41,7 +54,7 @@ Verify invalid reference number base - too short only two digits
     Close Browser
 
 Verify invalid reference number base - too short only zeros
-    Open Browser    ${url}  ${browser}
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     00
     Select From List By value   ${input_refNumberAmount}   2: TEN
@@ -51,7 +64,7 @@ Verify invalid reference number base - too short only zeros
     Close Browser
 
 Verify invalid reference number base - too long 20-digits
-    Open Browser    ${url}  ${browser}
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     12345678912345678912
     Select From List By value   ${input_refNumberAmount}   2: TEN
@@ -61,7 +74,7 @@ Verify invalid reference number base - too long 20-digits
     Close Browser
 
 Verify invalid reference number base - too long 21-digits
-    Open Browser    ${url}  ${browser}
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     123456789123456789123
     Select From List By value   ${input_refNumberAmount}   2: TEN
@@ -70,10 +83,30 @@ Verify invalid reference number base - too long 21-digits
     Element Text Should Be   ${error_container}    Viitenumeron perusosa on liian lyhyt.
     Close Browser 
 
-Verify invalid reference number base - includes space
-    Open Browser    ${url}  ${browser}
+Verify invalid reference number base - includes space in the beginning
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
-    Input Text   ${input_refNumberBase}     236 4
+    Input Text   ${input_refNumberBase}     ${SPACE}2364
+    Select From List By value   ${input_refNumberAmount}   2: TEN
+    Click Element  ${input_refNumberType}      
+    Sleep   2s
+    Element Text Should Be   ${error_container}    Syötetty arvo ei ole validi numero.
+    Close Browser 
+
+Verify invalid reference number base - includes space in the middle
+    Access application  ${URL}  ${BROWSER}
+    Sleep   5s
+    Input Text   ${input_refNumberBase}     236${SPACE}4
+    Select From List By value   ${input_refNumberAmount}   2: TEN
+    Click Element  ${input_refNumberType}      
+    Sleep   2s
+    Element Text Should Be   ${error_container}    Syötetty arvo ei ole validi numero.
+    Close Browser 
+
+Verify invalid reference number base - includes space in the end
+    Access application  ${URL}  ${BROWSER}
+    Sleep   5s
+    Input Text   ${input_refNumberBase}     2364${SPACE}
     Select From List By value   ${input_refNumberAmount}   2: TEN
     Click Element  ${input_refNumberType}      
     Sleep   2s
@@ -81,7 +114,7 @@ Verify invalid reference number base - includes space
     Close Browser 
 
 Verify invalid reference number base - include alphabetical characters
-    Open Browser    ${url}  ${browser}
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     abc
     Select From List By value   ${input_refNumberAmount}   2: TEN
@@ -91,7 +124,7 @@ Verify invalid reference number base - include alphabetical characters
     Close Browser 
 
 Verify invalid reference number base - include special characters
-    Open Browser    ${url}  ${browser}
+    Access application  ${URL}  ${BROWSER}
     Sleep   5s
     Input Text   ${input_refNumberBase}     -123
     Select From List By value   ${input_refNumberAmount}   2: TEN

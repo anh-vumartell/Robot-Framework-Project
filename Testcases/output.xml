@@ -1,233 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220304 14:35:03.734" rpa="false" schemaversion="2">
-<suite id="s1" name="04 Ref Number Calculator" source="/home/Anh/PycharmProjects/Robot_Project/Testcases/04_Ref_Number_Calculator.robot">
-<test id="s1-t1" name="Verify invalid reference number base - too short starting with 0">
-<kw name="Access application">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<kw name="Open Browser" library="Selenium2Library">
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220304 14:35:04.113" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
-<status status="PASS" starttime="20220304 14:35:04.112" endtime="20220304 14:35:06.616"/>
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220309 12:47:39.832" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcases" source="/home/Anh/PycharmProjects/Robot_Project/Testcases">
+<kw name="Global Suite Setup" type="SETUP">
+<kw name="Log" library="BuiltIn">
+<arg>Our Robot awesomeness begins!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220309 12:47:39.871" level="INFO">Our Robot awesomeness begins!</msg>
+<status status="PASS" starttime="20220309 12:47:39.871" endtime="20220309 12:47:39.871"/>
 </kw>
-<status status="PASS" starttime="20220304 14:35:04.111" endtime="20220304 14:35:06.616"/>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${NAME_FROM_INIT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220309 12:47:39.873" level="INFO">${NAME_FROM_INIT} = Global Name</msg>
+<status status="PASS" starttime="20220309 12:47:39.872" endtime="20220309 12:47:39.873"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220304 14:35:11.623" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20220304 14:35:06.618" endtime="20220304 14:35:11.624"/>
+<status status="PASS" starttime="20220309 12:47:39.870" endtime="20220309 12:47:39.873"/>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>${input_refNumberBase}</arg>
-<arg>02</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220304 14:35:11.626" level="INFO">Typing text '02' into text field 'name:referenceNumberBase'.</msg>
-<status status="PASS" starttime="20220304 14:35:11.624" endtime="20220304 14:35:11.808"/>
+<suite id="s1-s1" name="06 Greeting" source="/home/Anh/PycharmProjects/Robot_Project/Testcases/06_Greeting.robot">
+<test id="s1-s1-t1" name="Original Greetings">
+<kw name="Print Your Name" library="greeting">
+<kw name="Log" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220309 12:47:39.882" level="INFO">Jane Doe</msg>
+<status status="PASS" starttime="20220309 12:47:39.882" endtime="20220309 12:47:39.882"/>
 </kw>
-<kw name="Select From List By Value" library="Selenium2Library">
-<arg>${input_refNumberAmount}</arg>
-<arg>2: TEN</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20220304 14:35:11.809" level="INFO">Selecting options from selection list 'id:ig-select-referenceNumberAmount' by value 2: TEN.</msg>
-<status status="PASS" starttime="20220304 14:35:11.809" endtime="20220304 14:35:11.935"/>
+<status status="PASS" starttime="20220309 12:47:39.881" endtime="20220309 12:47:39.883"/>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>${input_refNumberType}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220304 14:35:11.937" level="INFO">Clicking element 'xpath://*[@id="ig-radiogroup-referenceNumberType"]/label[2]/div/span'.</msg>
-<msg timestamp="20220304 14:35:13.392" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-64.png"&gt;&lt;img src="selenium-screenshot-64.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220304 14:35:13.406" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
-  (Session info: chrome=99.0.4844.51)
-Stacktrace:
-#0 0x55a05397f113 &lt;unknown&gt;
-#1 0x55a0536e4428 &lt;unknown&gt;
-#2 0x55a053721398 &lt;unknown&gt;
-#3 0x55a05371ee47 &lt;unknown&gt;
-#4 0x55a05371c5b4 &lt;unknown&gt;
-#5 0x55a05371b33c &lt;unknown&gt;
-#6 0x55a05370ec99 &lt;unknown&gt;
-#7 0x55a0537377f2 &lt;unknown&gt;
-#8 0x55a05370e545 &lt;unknown&gt;
-#9 0x55a0537378fe &lt;unknown&gt;
-#10 0x55a05374a907 &lt;unknown&gt;
-#11 0x55a0537376e3 &lt;unknown&gt;
-#12 0x55a05370d09e &lt;unknown&gt;
-#13 0x55a05370e085 &lt;unknown&gt;
-#14 0x55a0539abcb6 &lt;unknown&gt;
-#15 0x55a0539c30bd &lt;unknown&gt;
-#16 0x55a0539adb0e &lt;unknown&gt;
-#17 0x55a0539c3a44 &lt;unknown&gt;
-#18 0x55a0539a1922 &lt;unknown&gt;
-#19 0x55a0539dcbe8 &lt;unknown&gt;
-#20 0x55a0539dcd43 &lt;unknown&gt;
-#21 0x55a0539f5e63 &lt;unknown&gt;
-#22 0x7ff33f79a609 &lt;unknown&gt;
-</msg>
-<status status="FAIL" starttime="20220304 14:35:11.936" endtime="20220304 14:35:13.406"/>
+<kw name="Print Your Name" library="greeting">
+<arg>${YOUR_NAME}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220309 12:47:39.885" level="INFO">Your Name</msg>
+<status status="PASS" starttime="20220309 12:47:39.884" endtime="20220309 12:47:39.885"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:13.407" endtime="20220304 14:35:13.407"/>
+<status status="PASS" starttime="20220309 12:47:39.883" endtime="20220309 12:47:39.885"/>
 </kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<arg>${error_container}</arg>
-<arg>Viitenumeron perusosa on liian lyhyt.</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:13.407" endtime="20220304 14:35:13.407"/>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:13.408" endtime="20220304 14:35:13.408"/>
-</kw>
-<tag>long</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:04.110" endtime="20220304 14:35:13.408">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="optionLabel"&gt;...&lt;/span&gt; is not clickable at point (150, 801). Other element would receive the click: &lt;div id="CybotCookiebotDialogBodyUnderlay"&gt;&lt;/div&gt;
-  (Session info: chrome=99.0.4844.51)
-Stacktrace:
-#0 0x55a05397f113 &lt;unknown&gt;
-#1 0x55a0536e4428 &lt;unknown&gt;
-#2 0x55a053721398 &lt;unknown&gt;
-#3 0x55a05371ee47 &lt;unknown&gt;
-#4 0x55a05371c5b4 &lt;unknown&gt;
-#5 0x55a05371b33c &lt;unknown&gt;
-#6 0x55a05370ec99 &lt;unknown&gt;
-#7 0x55a0537377f2 &lt;unknown&gt;
-#8 0x55a05370e545 &lt;unknown&gt;
-#9 0x55a0537378fe &lt;unknown&gt;
-#10 0x55a05374a907 &lt;unknown&gt;
-#11 0x55a0537376e3 &lt;unknown&gt;
-#12 0x55a05370d09e &lt;unknown&gt;
-#13 0x55a05370e085 &lt;unknown&gt;
-#14 0x55a0539abcb6 &lt;unknown&gt;
-#15 0x55a0539c30bd &lt;unknown&gt;
-#16 0x55a0539adb0e &lt;unknown&gt;
-#17 0x55a0539c3a44 &lt;unknown&gt;
-#18 0x55a0539a1922 &lt;unknown&gt;
-#19 0x55a0539dcbe8 &lt;unknown&gt;
-#20 0x55a0539dcd43 &lt;unknown&gt;
-#21 0x55a0539f5e63 &lt;unknown&gt;
-#22 0x7ff33f79a609 &lt;unknown&gt;
-</status>
+<doc>This test case checks that the Print Your Name keyword works as expected.</doc>
+<tag>ubuntu</tag>
+<status status="PASS" starttime="20220309 12:47:39.880" endtime="20220309 12:47:39.885"/>
 </test>
-<test id="s1-t2" name="Verify invalid reference number base - too short only two digits">
-<kw name="Access application">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<kw name="Open Browser" library="Selenium2Library">
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220304 14:35:13.413" level="INFO">Opening browser 'chrome' to base url 'https://www.aktia.fi/fi/yritysasiakkaat/viitenumerolaskuri'.</msg>
-<status status="PASS" starttime="20220304 14:35:13.412" endtime="20220304 14:35:16.787"/>
+<test id="s1-s1-t2" name="Greetings From Init">
+<kw name="Print Your Name" library="greeting">
+<arg>${NAME_FROM_INIT}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220309 12:47:39.890" level="INFO">Global Name</msg>
+<status status="PASS" starttime="20220309 12:47:39.890" endtime="20220309 12:47:39.891"/>
 </kw>
-<status status="PASS" starttime="20220304 14:35:13.411" endtime="20220304 14:35:16.788"/>
+<status status="PASS" starttime="20220309 12:47:39.887" endtime="20220309 12:47:39.891"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="FAIL" starttime="20220304 14:35:16.789" endtime="20220304 14:35:21.789"/>
+<doc>This test case proves that we can create global variables using initialization files.</doc>
+<tag>centos</tag>
+<tag>ubuntu</tag>
+<status status="PASS" starttime="20220309 12:47:39.886" endtime="20220309 12:47:39.892"/>
+</test>
+<status status="PASS" starttime="20220309 12:47:39.873" endtime="20220309 12:47:39.893"/>
+</suite>
+<kw name="Global Suite Teardown" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>The end of the awesomeness!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220309 12:47:39.897" level="INFO">The end of the awesomeness!</msg>
+<status status="PASS" starttime="20220309 12:47:39.897" endtime="20220309 12:47:39.897"/>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>${input_refNumberBase}</arg>
-<arg>12</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:21.790" endtime="20220304 14:35:21.791"/>
+<status status="PASS" starttime="20220309 12:47:39.896" endtime="20220309 12:47:39.898"/>
 </kw>
-<kw name="Select From List By Value" library="Selenium2Library">
-<arg>${input_refNumberAmount}</arg>
-<arg>2: TEN</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:21.791" endtime="20220304 14:35:21.791"/>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>${input_refNumberType}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:21.792" endtime="20220304 14:35:21.792"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:21.793" endtime="20220304 14:35:21.793"/>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<arg>${error_container}</arg>
-<arg>Viitenumeron perusosa on liian lyhyt.</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:21.793" endtime="20220304 14:35:21.850"/>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20220304 14:35:21.850" endtime="20220304 14:35:21.850"/>
-</kw>
-<tag>long</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:13.410" endtime="20220304 14:35:21.857">Execution terminated by signal</status>
-</test>
-<test id="s1-t3" name="Verify invalid reference number base - too short only zeros">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.862" endtime="20220304 14:35:21.876">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t4" name="Verify invalid reference number base - too long 20-digits">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.889" endtime="20220304 14:35:21.901">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t5" name="Verify invalid reference number base - too long 21-digits">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.911" endtime="20220304 14:35:21.920">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t6" name="Verify invalid reference number base - includes space in the beginning">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.923" endtime="20220304 14:35:21.935">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t7" name="Verify invalid reference number base - includes space in the middle">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.945" endtime="20220304 14:35:21.951">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t8" name="Verify invalid reference number base - includes space in the end">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.959" endtime="20220304 14:35:21.971">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t9" name="Verify invalid reference number base - include alphabetical characters">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.980" endtime="20220304 14:35:21.986">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t10" name="Verify invalid reference number base - include special characters">
-<tag>long</tag>
-<tag>robot:exit</tag>
-<tag>short</tag>
-<status status="FAIL" starttime="20220304 14:35:21.990" endtime="20220304 14:35:21.997">Test execution stopped due to a fatal error.</status>
-</test>
-<status status="FAIL" starttime="20220304 14:35:03.737" endtime="20220304 14:35:22.009"/>
+<status status="PASS" starttime="20220309 12:47:39.836" endtime="20220309 12:47:39.898"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="10" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
-<stat pass="0" fail="10" skip="0">long</stat>
-<stat pass="0" fail="10" skip="0">short</stat>
+<stat pass="1" fail="0" skip="0">centos</stat>
+<stat pass="2" fail="0" skip="0">ubuntu</stat>
 </tag>
 <suite>
-<stat pass="0" fail="10" skip="0" id="s1" name="04 Ref Number Calculator">04 Ref Number Calculator</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="06 Greeting">Testcases.06 Greeting</stat>
 </suite>
 </statistics>
 <errors>

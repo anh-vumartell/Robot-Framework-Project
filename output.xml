@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220315 13:10:04.106" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.8.10 on linux)" generated="20220315 13:35:29.901" rpa="false" schemaversion="2">
 <suite id="s1" name="Robot Project" source="/home/Anh/PycharmProjects/Robot_Project">
 <suite id="s1-s1" name="02 Classroom" source="/home/Anh/PycharmProjects/Robot_Project/02_Classroom">
 <suite id="s1-s1-s1" name="02-Exams" source="/home/Anh/PycharmProjects/Robot_Project/02_Classroom/02-Exams.robot">
@@ -12,8 +12,8 @@
 into a Python dictionary
 What is return from this method is a dictionary
 Ex: &amp;{parsed_json}      Parse JSON  File    exam_results.json</doc>
-<msg timestamp="20220315 13:10:04.159" level="INFO">&amp;{exam_results} = { Jane Doe={'math': '90%', 'physics': '85%'} | John Doe={'math': '85%', 'physics': '90%'} }</msg>
-<status status="PASS" starttime="20220315 13:10:04.157" endtime="20220315 13:10:04.159"/>
+<msg timestamp="20220315 13:35:29.977" level="INFO">&amp;{exam_results} = { Jane Doe={'math': '90%', 'physics': '85%'} | John Doe={'math': '85%', 'physics': '90%'} }</msg>
+<status status="PASS" starttime="20220315 13:35:29.975" endtime="20220315 13:35:29.977"/>
 </kw>
 <for flavor="IN">
 <var>${student}</var>
@@ -25,9 +25,9 @@ Ex: &amp;{parsed_json}      Parse JSON  File    exam_results.json</doc>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${student}: ${result}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220315 13:10:04.160" endtime="20220315 13:10:04.161"/>
+<status status="PASS" starttime="20220315 13:35:29.979" endtime="20220315 13:35:29.980"/>
 </kw>
-<status status="PASS" starttime="20220315 13:10:04.160" endtime="20220315 13:10:04.161"/>
+<status status="PASS" starttime="20220315 13:35:29.979" endtime="20220315 13:35:29.980"/>
 </iter>
 <iter>
 <var name="${student}">John Doe</var>
@@ -35,35 +35,162 @@ Ex: &amp;{parsed_json}      Parse JSON  File    exam_results.json</doc>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${student}: ${result}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220315 13:10:04.162" endtime="20220315 13:10:04.163"/>
+<status status="PASS" starttime="20220315 13:35:29.981" endtime="20220315 13:35:29.981"/>
 </kw>
-<status status="PASS" starttime="20220315 13:10:04.162" endtime="20220315 13:10:04.163"/>
+<status status="PASS" starttime="20220315 13:35:29.980" endtime="20220315 13:35:29.981"/>
 </iter>
-<status status="PASS" starttime="20220315 13:10:04.159" endtime="20220315 13:10:04.163"/>
+<status status="PASS" starttime="20220315 13:35:29.977" endtime="20220315 13:35:29.981"/>
 </for>
 <doc>In this test case we use json.loads() to take the content
 of a json file and assign them to a dict variable by using
 EVALUATE keyword
 Use FOR...IN loop to loop through each value in the dict
 and log them to the console</doc>
-<status status="PASS" starttime="20220315 13:10:04.156" endtime="20220315 13:10:04.164"/>
+<status status="PASS" starttime="20220315 13:35:29.973" endtime="20220315 13:35:29.982"/>
 </test>
-<status status="PASS" starttime="20220315 13:10:04.145" endtime="20220315 13:10:04.165"/>
+<test id="s1-s1-s1-t2" name="Generate Exam Results">
+<kw name="Remove File" library="OperatingSystem" type="SETUP">
+<arg>${ANOTHER_RESULTS_FILE}</arg>
+<doc>Removes a file with the given path.</doc>
+<msg timestamp="20220315 13:35:29.984" level="INFO" html="true">File '&lt;a href="file:///home/Anh/PycharmProjects/Robot_Project/02_Classroom/test-data/another_results_file.txt"&gt;/home/Anh/PycharmProjects/Robot_Project/02_Classroom/test-data/another_results_file.txt&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20220315 13:35:29.983" endtime="20220315 13:35:29.984"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${file_content}</var>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220315 13:35:29.985" level="INFO">${file_content} = </msg>
+<status status="PASS" starttime="20220315 13:35:29.985" endtime="20220315 13:35:29.985"/>
+</kw>
+<for flavor="IN">
+<var>${student}</var>
+<value>@{STUDENTS}</value>
+<iter>
+<var name="${student}">Ngoc Anh</var>
+<kw name="Generate Random Number" library="HelperLibrary">
+<var>${grade}</var>
+<arg>${0}</arg>
+<arg>${100}</arg>
+<tag>random</tag>
+<msg timestamp="20220315 13:35:29.988" level="INFO">${grade} = 39</msg>
+<status status="PASS" starttime="20220315 13:35:29.986" endtime="20220315 13:35:29.989"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${file_content}</var>
+<arg>${file_content}</arg>
+<arg>${student}: ${grade}%${\n}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220315 13:35:29.990" level="INFO">${file_content} =  Ngoc Anh: 39%
+</msg>
+<status status="PASS" starttime="20220315 13:35:29.989" endtime="20220315 13:35:29.990"/>
+</kw>
+<status status="PASS" starttime="20220315 13:35:29.986" endtime="20220315 13:35:29.990"/>
+</iter>
+<iter>
+<var name="${student}">Conny</var>
+<kw name="Generate Random Number" library="HelperLibrary">
+<var>${grade}</var>
+<arg>${0}</arg>
+<arg>${100}</arg>
+<tag>random</tag>
+<msg timestamp="20220315 13:35:29.993" level="INFO">${grade} = 100</msg>
+<status status="PASS" starttime="20220315 13:35:29.991" endtime="20220315 13:35:29.993"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${file_content}</var>
+<arg>${file_content}</arg>
+<arg>${student}: ${grade}%${\n}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220315 13:35:29.995" level="INFO">${file_content} =  Ngoc Anh: 39%
+ Conny: 100%
+</msg>
+<status status="PASS" starttime="20220315 13:35:29.994" endtime="20220315 13:35:29.995"/>
+</kw>
+<status status="PASS" starttime="20220315 13:35:29.991" endtime="20220315 13:35:29.995"/>
+</iter>
+<iter>
+<var name="${student}">Emma</var>
+<kw name="Generate Random Number" library="HelperLibrary">
+<var>${grade}</var>
+<arg>${0}</arg>
+<arg>${100}</arg>
+<tag>random</tag>
+<msg timestamp="20220315 13:35:29.997" level="INFO">${grade} = 27</msg>
+<status status="PASS" starttime="20220315 13:35:29.995" endtime="20220315 13:35:29.997"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${file_content}</var>
+<arg>${file_content}</arg>
+<arg>${student}: ${grade}%${\n}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220315 13:35:29.999" level="INFO">${file_content} =  Ngoc Anh: 39%
+ Conny: 100%
+ Emma: 27%
+</msg>
+<status status="PASS" starttime="20220315 13:35:29.998" endtime="20220315 13:35:29.999"/>
+</kw>
+<status status="PASS" starttime="20220315 13:35:29.995" endtime="20220315 13:35:29.999"/>
+</iter>
+<iter>
+<var name="${student}">Stella</var>
+<kw name="Generate Random Number" library="HelperLibrary">
+<var>${grade}</var>
+<arg>${0}</arg>
+<arg>${100}</arg>
+<tag>random</tag>
+<msg timestamp="20220315 13:35:30.001" level="INFO">${grade} = 84</msg>
+<status status="PASS" starttime="20220315 13:35:29.999" endtime="20220315 13:35:30.001"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${file_content}</var>
+<arg>${file_content}</arg>
+<arg>${student}: ${grade}%${\n}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220315 13:35:30.002" level="INFO">${file_content} =  Ngoc Anh: 39%
+ Conny: 100%
+ Emma: 27%
+ Stella: 84%
+</msg>
+<status status="PASS" starttime="20220315 13:35:30.001" endtime="20220315 13:35:30.002"/>
+</kw>
+<status status="PASS" starttime="20220315 13:35:29.999" endtime="20220315 13:35:30.002"/>
+</iter>
+<status status="PASS" starttime="20220315 13:35:29.986" endtime="20220315 13:35:30.002"/>
+</for>
+<kw name="Create File" library="OperatingSystem">
+<arg>${ANOTHER_RESULTS_FILE}</arg>
+<arg>${file_content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220315 13:35:30.004" level="INFO" html="true">Created file '&lt;a href="file:///home/Anh/PycharmProjects/Robot_Project/02_Classroom/test-data/another_results_file.txt"&gt;/home/Anh/PycharmProjects/Robot_Project/02_Classroom/test-data/another_results_file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220315 13:35:30.003" endtime="20220315 13:35:30.004"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${file_content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220315 13:35:30.005" level="INFO"> Ngoc Anh: 39%
+ Conny: 100%
+ Emma: 27%
+ Stella: 84%
+</msg>
+<status status="PASS" starttime="20220315 13:35:30.004" endtime="20220315 13:35:30.005"/>
+</kw>
+<status status="PASS" starttime="20220315 13:35:29.983" endtime="20220315 13:35:30.006"/>
+</test>
+<status status="PASS" starttime="20220315 13:35:29.940" endtime="20220315 13:35:30.007"/>
 </suite>
-<status status="PASS" starttime="20220315 13:10:04.141" endtime="20220315 13:10:04.167"/>
+<status status="PASS" starttime="20220315 13:35:29.937" endtime="20220315 13:35:30.010"/>
 </suite>
-<status status="PASS" starttime="20220315 13:10:04.109" endtime="20220315 13:10:04.169"/>
+<status status="PASS" starttime="20220315 13:35:29.903" endtime="20220315 13:35:30.012"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Robot Project">Robot Project</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="02 Classroom">Robot Project.02 Classroom</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="02-Exams">Robot Project.02 Classroom.02-Exams</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Robot Project">Robot Project</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="02 Classroom">Robot Project.02 Classroom</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="02-Exams">Robot Project.02 Classroom.02-Exams</stat>
 </suite>
 </statistics>
 <errors>
